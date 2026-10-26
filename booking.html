@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment | Glow Beauty Parlour</title>
+  <meta name="description" content="Book your beauty appointment online at Glow Beauty Parlour. Choose services, date and time slot.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PAGE LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">Glow<span>.</span></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <a href="index.html" class="logo">Glow<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" class="nav-book">Book Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- PAGE BANNER -->
+  <section class="page-banner">
+    <h1>Book Your Appointment</h1>
+    <p class="breadcrumb"><a href="index.html">Home</a> / Book Now</p>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section bg-blush">
+    <div class="booking-layout">
+
+      <!-- MAIN FORM -->
+      <div class="booking-main">
+
+        <!-- Steps indicator -->
+        <div class="steps">
+          <div class="step active" data-step="1"><div class="step-num">1</div><div class="step-label">Services</div></div>
+          <div class="step" data-step="2"><div class="step-num">2</div><div class="step-label">Date &amp; Time</div></div>
+          <div class="step" data-step="3"><div class="step-num">3</div><div class="step-label">Details</div></div>
+          <div class="step" data-step="4"><div class="step-num">4</div><div class="step-label">Confirm</div></div>
+        </div>
+
+        <!-- STEP 1: SERVICES -->
+        <div class="step-panel active" data-panel="1">
+          <h3>Choose Your Services</h3>
+          <p class="panel-sub">Select one or more services. Your total amount is shown on the right.</p>
+
+          <div class="svc-tabs" id="svcTabs"></div>
+          <div class="svc-grid" id="svcGrid"></div>
+          <small class="error" id="svcError"></small>
+
+          <div class="step-actions">
+            <span></span>
+            <button type="button" class="btn btn-maroon" data-next>Next: Date &amp; Time →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: DATE & TIME -->
+        <div class="step-panel" data-panel="2">
+          <h3>Pick Date &amp; Time</h3>
+          <p class="panel-sub">Choose a date to see the available time slots.</p>
+
+          <div class="form-group">
+            <label for="dateInput">Select Date *</label>
+            <input type="date" id="dateInput" class="date-input">
+            <small class="error" id="dateError"></small>
+          </div>
+
+          <div id="slotsWrap">
+            <p class="hint">Please select a date to see the available time slots.</p>
+          </div>
+          <small class="error" id="slotError"></small>
+
+          <div class="step-actions">
+            <button type="button" class="btn btn-back" data-back>← Back</button>
+            <button type="button" class="btn btn-maroon" data-next>Next: Your Details →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: DETAILS -->
+        <div class="step-panel" data-panel="3">
+          <h3>Your Details</h3>
+          <p class="panel-sub">We will use these details to confirm your appointment.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" placeholder="Enter your name" autocomplete="name">
+              <small class="error" id="nameError"></small>
+            </div>
+            <div class="form-group">
+              <label for="phone">Mobile Number *</label>
+              <input type="tel" id="phone" placeholder="10 digit mobile number" maxlength="10" inputmode="numeric" autocomplete="tel">
+              <small class="error" id="phoneError"></small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="notes">Special Request (optional)</label>
+            <textarea id="notes" placeholder="Any special request or message for our team"></textarea>
+          </div>
+
+          <div class="step-actions">
+            <button type="button" class="btn btn-back" data-back>← Back</button>
+            <button type="button" class="btn btn-maroon" data-next>Next: Review →</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: CONFIRM -->
+        <div class="step-panel" data-panel="4">
+          <h3>Review &amp; Confirm</h3>
+          <p class="panel-sub">Please check your booking details. After confirming, WhatsApp will open so you can send the booking to us.</p>
+
+          <div class="review-box" id="reviewBox"></div>
+
+          <div class="step-actions">
+            <button type="button" class="btn btn-back" data-back>← Back</button>
+            <button type="button" class="btn btn-gold" id="confirmBtn">Confirm Booking ✓</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUMMARY SIDEBAR -->
+      <aside class="summary">
+        <h3>Booking Summary</h3>
+        <div id="summaryItems">
+          <p class="summary-empty">No service selected yet. Choose from the list.</p>
+        </div>
+        <div class="summary-meta" id="summaryMeta"></div>
+        <div class="summary-total">
+          <span>Total Amount</span>
+          <strong>₹<span id="totalAmount">0</span></strong>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal" id="successModal">
+    <div class="modal-box">
+      <svg class="tick-svg" viewBox="0 0 52 52">
+        <circle cx="26" cy="26" r="25"></circle>
+        <path d="M14 27l8 8 16-16"></path>
+      </svg>
+      <h3>Booking Confirmed!</h3>
+      <p id="successMsg"></p>
+      <button type="button" class="btn btn-maroon" id="closeModal">OK, Send on WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">Glow<span>.</span></a>
+        <p>Your beauty, our passion. Hair, skin, facial, nails and bridal makeup by trained experts.</p>
+        <div class="social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="YouTube">yt</a>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="booking.html">Book Now</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services.html">Hair Care</a></li>
+          <li><a href="services.html">Skin &amp; Facials</a></li>
+          <li><a href="services.html">Manicure &amp; Pedicure</a></li>
+          <li><a href="services.html">Pre-Bridal Grooming</a></li>
+          <li><a href="services.html">Bridal Makeup</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact Us</h4>
+        <p>📍 12, Main Road, Your Town,<br>Tamil Nadu - 600001</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@glowbeauty.com</p>
+        <p>🕒 Mon-Sat: 10 AM - 8 PM<br>Sunday: 10 AM - 6 PM</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; <span id="year">2026</span> Glow Beauty Parlour. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

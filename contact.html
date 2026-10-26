@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Glow Beauty Parlour</title>
+  <meta name="description" content="Contact Glow Beauty Parlour. Find our address, phone number, timings and send us a message on WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- PAGE LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">Glow<span>.</span></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <a href="index.html" class="logo">Glow<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" class="nav-book">Book Now</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- PAGE BANNER -->
+  <section class="page-banner">
+    <h1>Contact Us</h1>
+    <p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section bg-blush">
+    <div class="section-head reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2 class="section-title">We Would Love to Hear From You</h2>
+      <p class="section-sub">Visit us, call us or send a message. We will reply as soon as possible.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- INFO -->
+      <div class="reveal-left">
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <h4>Our Address</h4>
+            <p>12, Main Road, Your Town,<br>Tamil Nadu - 600001</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div>
+            <h4>Call Us</h4>
+            <p><a href="tel:+919876543210" style="text-decoration:none">+91 98765 43210</a></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">💬</div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p><a href="https://wa.me/919876543210" target="_blank" rel="noopener" style="text-decoration:none">Chat with us on WhatsApp</a></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:hello@glowbeauty.com" style="text-decoration:none">hello@glowbeauty.com</a></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">🕒</div>
+          <div>
+            <h4>Open Hours</h4>
+            <p>Monday - Saturday: 10 AM - 8 PM<br>Sunday: 10 AM - 6 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <form class="contact-form reveal-right" id="contactForm" novalidate>
+        <h3>Send Us a Message</h3>
+
+        <div class="form-group">
+          <label for="cName">Your Name *</label>
+          <input type="text" id="cName" placeholder="Enter your name" autocomplete="name">
+          <small class="error" id="cNameError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="cPhone">Mobile Number *</label>
+          <input type="tel" id="cPhone" placeholder="10 digit mobile number" maxlength="10" inputmode="numeric" autocomplete="tel">
+          <small class="error" id="cPhoneError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="cMessage">Message</label>
+          <textarea id="cMessage" placeholder="How can we help you?"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-maroon btn-full">Send on WhatsApp</button>
+        <p id="contactNote" style="margin-top:14px;font-size:14px;color:var(--maroon);font-weight:500"></p>
+      </form>
+    </div>
+
+    <!-- MAP -->
+    <div class="map-wrap reveal">
+      <iframe
+        src="https://maps.google.com/maps?q=Tamil%20Nadu&output=embed"
+        title="Glow Beauty Parlour location"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="reveal">
+      <h2>Prefer to Book Online?</h2>
+      <p>Choose your services, pick a time slot and see your total amount instantly.</p>
+      <a href="booking.html" class="btn btn-gold">Book Appointment</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">Glow<span>.</span></a>
+        <p>Your beauty, our passion. Hair, skin, facial, nails and bridal makeup by trained experts.</p>
+        <div class="social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="YouTube">yt</a>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="booking.html">Book Now</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services.html">Hair Care</a></li>
+          <li><a href="services.html">Skin &amp; Facials</a></li>
+          <li><a href="services.html">Manicure &amp; Pedicure</a></li>
+          <li><a href="services.html">Pre-Bridal Grooming</a></li>
+          <li><a href="services.html">Bridal Makeup</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact Us</h4>
+        <p>📍 12, Main Road, Your Town,<br>Tamil Nadu - 600001</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@glowbeauty.com</p>
+        <p>🕒 Mon-Sat: 10 AM - 8 PM<br>Sunday: 10 AM - 6 PM</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; <span id="year">2026</span> Glow Beauty Parlour. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
